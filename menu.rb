@@ -18,4 +18,15 @@ class Menu
     def get_items()
         @menu_items
     end
+
+    def display
+        menu_title = "MENU"
+        spacing = MenuItem::MENU_LIST_SPACING
+        puts "\n"
+        puts "=" * spacing
+        puts "MENU".center(spacing, " ")
+        puts "=" * spacing
+        @menu_items.each { |item| puts item }
+        nil
+    end
 end
