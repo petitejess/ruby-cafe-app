@@ -14,4 +14,8 @@ class Menu
         item = @menu_items.find { |menu_item| menu_item.name === name }
         item.price
     end
+
+    def get_items()
+        @menu_items
+    end
 end
