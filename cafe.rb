@@ -1,3 +1,4 @@
+require_relative './menu_item.rb'
 require_relative './menu.rb'
 require_relative './order.rb'
 
@@ -26,6 +27,12 @@ class Cafe
     end
 
     def welcome
-        puts "Welcome to #{@name}!"
+        spacing = MenuItem::MENU_LIST_SPACING
+        puts "\n"
+        puts "Welcome to #{@name}!".center(spacing)
+    end
+
+    def print_menu
+        @menu.display
     end
 end
