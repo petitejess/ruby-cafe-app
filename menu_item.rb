@@ -9,6 +9,7 @@ class MenuItem
     end
 
     def to_s
-        "#{@name} ".ljust(MENU_LIST_SPACING / 2) + "$#{sprintf("%.2f", @price)}".rjust(MENU_LIST_SPACING / 2)
+        spacing = MENU_LIST_SPACING
+        "#{@name}".ljust(spacing / 2, '.') + "$#{sprintf("%.2f", @price)}".rjust(spacing / 2, '.')
     end
 end
