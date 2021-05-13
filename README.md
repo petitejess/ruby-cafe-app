@@ -14,3 +14,21 @@ Then, in the root directory of this project, run:
 ```
 $ rspec
 ```
+
+## Run App
+
+To run the app, in the terminal, in the root directory of this project, run:
+```
+$ ruby ruby_app.rb
+```
+
+## Usage
+
+The app will do the following:
+
+1. Display welcome message.
+1. Display the available menu.
+1. Prompt input for the **name** of item you wish to order.
+1. Prompt input for the **quantity** of item you wish to order.
+1. Repeat prompting for input of name and quantity until you enter **'done'**.
+1. Once done, it will display your order.
