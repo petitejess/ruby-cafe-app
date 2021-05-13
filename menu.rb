@@ -20,13 +20,22 @@ class Menu
     end
 
     def display
-        menu_title = "MENU"
         spacing = MenuItem::MENU_LIST_SPACING
+        menu_title = "MENU"
         puts "\n"
         puts "=" * spacing
-        puts "MENU".center(spacing, " ")
+        puts menu_title.center(spacing, " ")
         puts "=" * spacing
         @menu_items.each { |item| puts item }
+        nil
+    end
+
+    def validate_item(name)
+        @menu_items.each do |menu_item|
+            if menu_item.name === name
+                return name
+            end
+        end
         nil
     end
 end

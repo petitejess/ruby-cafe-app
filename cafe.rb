@@ -33,7 +33,9 @@ class Cafe
     end
 
     def print_menu
+        spacing = MenuItem::MENU_LIST_SPACING
         @menu.display
+        puts "=" * spacing
     end
 
     def order_total
@@ -45,12 +47,18 @@ class Cafe
     end
 
     def print_order
-        if @order
+        spacing = MenuItem::MENU_LIST_SPACING
+        if order_total !=  0
             @order.display
-            puts "Total: $%.2f" % order_total
+            puts "-" * spacing
+            puts "TOTAL:".ljust(spacing / 2) + "$#{sprintf("%.2f", order_total)}".rjust(spacing / 2)
         else
-            puts "Thank you for coming!"
+            puts
+            puts "x" * spacing
+            puts "Your order is empty.".center(spacing)
         end
+        puts "=" * spacing
         puts
+        puts "Thank you for coming!".center(spacing, " ")
     end
 end

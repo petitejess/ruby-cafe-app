@@ -35,6 +35,22 @@ describe Menu do
         menu.add_item(name, price)
         expect(menu.get_items().length).to be(1)
     end
+
+    it 'should return the item name for a valid item' do
+        name = "latte"
+        price = 4.00
+        menu = Menu.new
+        menu.add_item(name, price)
+        expect(menu.validate_item(name)).to eq(name)
+    end
+
+    it 'should return nil for an invalid item' do
+        name = "latte"
+        price = 4.00
+        menu = Menu.new
+        menu.add_item(name, price)
+        expect(menu.validate_item("tea")).to eq(nil)
+    end
 end
 
 describe Order do
