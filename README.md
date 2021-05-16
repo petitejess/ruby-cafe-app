@@ -2,6 +2,8 @@
 
 A simple terminal app built using Ruby as a practice. The app created using Test Driven Development approach, using rspec Ruby gem as the tool.
 
+The app simulates a very simple order process of items listed in the menu. User is expected to enter their order and the app will calculate and display the order with the total cost.
+
 ## Run Test
 
 To run the tests, first add the required dependency:  

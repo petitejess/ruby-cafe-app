@@ -2,6 +2,8 @@ require_relative './menu_item.rb'
 require_relative './menu.rb'
 require_relative './order.rb'
 
+require 'artii'
+
 class Cafe
     attr_reader :name, :menu
 
@@ -28,8 +30,10 @@ class Cafe
 
     def welcome
         spacing = MenuItem::MENU_LIST_SPACING
+        message = Artii::Base.new
         puts "\n"
-        puts "Welcome to #{@name}!".center(spacing)
+        puts message.asciify("Welcome to")
+        puts message.asciify("#{@name}!")
     end
 
     def print_menu
@@ -48,6 +52,7 @@ class Cafe
 
     def print_order
         spacing = MenuItem::MENU_LIST_SPACING
+        message = Artii::Base.new
         if order_total !=  0
             @order.display
             puts "-" * spacing
@@ -59,6 +64,7 @@ class Cafe
         end
         puts "=" * spacing
         puts
-        puts "Thank you for coming!".center(spacing, " ")
+        puts message.asciify("Thank you")
+        puts message.asciify("for coming!")
     end
 end
